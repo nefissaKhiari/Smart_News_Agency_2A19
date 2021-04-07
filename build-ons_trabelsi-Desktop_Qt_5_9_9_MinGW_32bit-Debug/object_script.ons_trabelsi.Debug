@@ -1,0 +1,16 @@
+INPUT(
+./debug\article.o
+./debug\connexion.o
+./debug\exportexcelobject.o
+./debug\gestion_ons.o
+./debug\journaliste.o
+./debug\main.o
+./debug\mainwindow.o
+./debug\stat_type.o
+./debug\qrc_RES.o
+./debug\qrc_Resources.o
+./debug\moc_exportexcelobject.o
+./debug\moc_gestion_ons.o
+./debug\moc_mainwindow.o
+./debug\moc_stat_type.o
+);

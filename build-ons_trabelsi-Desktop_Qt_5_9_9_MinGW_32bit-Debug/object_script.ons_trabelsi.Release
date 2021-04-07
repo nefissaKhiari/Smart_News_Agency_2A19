@@ -1,0 +1,16 @@
+INPUT(
+./release\article.o
+./release\connexion.o
+./release\exportexcelobject.o
+./release\gestion_ons.o
+./release\journaliste.o
+./release\main.o
+./release\mainwindow.o
+./release\stat_type.o
+./release\qrc_RES.o
+./release\qrc_Resources.o
+./release\moc_exportexcelobject.o
+./release\moc_gestion_ons.o
+./release\moc_mainwindow.o
+./release\moc_stat_type.o
+);
