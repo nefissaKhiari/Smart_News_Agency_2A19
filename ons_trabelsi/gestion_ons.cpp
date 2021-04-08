@@ -1,6 +1,6 @@
 #include "gestion_ons.h"
 #include "ui_gestion_ons.h"
-
+#include "notifications.h"
 gestion_ons::gestion_ons(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::gestion_ons)
@@ -77,6 +77,9 @@ void gestion_ons::on_actionadd_journaliste_clicked()
 {
 
 
+    Notifications *n = new Notifications();
+    n->notifications_modifiercadeau();
+
       //recuperation des donnees
         QString s1=id();
         QString s2=nom();
@@ -117,6 +120,7 @@ void gestion_ons::on_actiondelete_journaliste_clicked()
   mc.supprimer(selected_journaliste);
 
   get_journaliste();
+
 
  //refresh du tableau (affichage)
    show_journaliste();
@@ -303,7 +307,8 @@ void gestion_ons::get_journaliste(){
 void gestion_ons::on_actionadd_article_clicked()
 {
 
-
+    Notifications *n = new Notifications();
+    n->notifications_modifierparticipation();
       //recuperation des donnees
         QString s1=id2();
         QString s2=type2();
@@ -390,6 +395,7 @@ void gestion_ons::on_stat_clicked()
 //imprimer
 void gestion_ons::on_pushButton_2_clicked()
 {
+
         QString strStream;
         QTextStream out(&strStream);
 

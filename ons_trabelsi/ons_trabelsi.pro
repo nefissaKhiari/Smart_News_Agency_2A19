@@ -23,6 +23,7 @@ SOURCES += \
     journaliste.cpp \
     main.cpp \
     mainwindow.cpp \
+    notifications.cpp \
     stat_type.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     gestion_ons.h \
     journaliste.h \
     mainwindow.h \
+    notifications.h \
     stat_type.h
 
 FORMS += \

@@ -50,13 +50,16 @@ series->append(liste_type[i] ,count[i]);
 
 
 
-
+QPieSlice *slice = new QPieSlice();
+slice->setLabelVisible(true);
+slice->setPen(QPen(Qt::darkGreen,2));
 // Create the chart widget
 QChart *chart = new QChart();
 
 // Add data to chart with title and show legend
 chart->addSeries(series);
 chart->legend()->show();
+chart->setTitle("stat d'ARTICLES ");
 
 
 // Used to display the chart
