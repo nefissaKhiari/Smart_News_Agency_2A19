@@ -1,0 +1,15 @@
+INPUT(
+./release\connexion.o
+./release\gestion_malek.o
+./release\main.o
+./release\mainwindow.o
+./release\publicite.o
+./release\smtp.o
+./release\sponsor.o
+./release\stat_publicite.o
+./release\qrc_Resources.o
+./release\moc_gestion_malek.o
+./release\moc_mainwindow.o
+./release\moc_smtp.o
+./release\moc_stat_publicite.o
+);
