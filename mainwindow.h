@@ -34,6 +34,10 @@ private slots:
 
     void on_supp_3_clicked();
 
+    void on_read_equipement_textChanged(const QString &arg1);
+
+    void on_read_equipement_returnPressed();
+
 private:
     Ui::MainWindow *ui;
         studio s1;

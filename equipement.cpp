@@ -1,5 +1,5 @@
 #include "equipement.h"
-
+#include <QDebug>
 equipement::equipement()
 {
     nb=0;
@@ -32,7 +32,17 @@ bool equipement::add(){
 QSqlQueryModel * equipement::show()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("SELECT * FROM equipement");
+    model->setQuery("SELECT NB, NAME, DISPO FROM equipement");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("NB"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NAME"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("DISPO"));
+        return model;
+}
+
+QSqlQueryModel * equipement::showSearch(QString txt)
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT NB, NAME, DISPO FROM equipement  where (NAME LIKE '%"+txt+"%') OR (NB LIKE '%"+txt+"%') OR (DISPO LIKE '%"+txt+"%')");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("NB"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NAME"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("DISPO"));
@@ -50,7 +60,7 @@ return    query.exec();
 QSqlQueryModel * equipement::show_name()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("SELECT * FROM STUDIO ORDER BY name DESC ");
+    model->setQuery("SELECT NB, NAME, DISPO FROM STUDIO ORDER BY name DESC ");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("NB"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NAME"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("DISPO"));
@@ -70,7 +80,7 @@ QSqlQueryModel * equipement::show_dispo()
 QSqlQueryModel * equipement::show_nb()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("SELECT * FROM EQUIPEMENT ORDER BY ID DESC ");
+    model->setQuery("SELECT NB, NAME, DISPO FROM EQUIPEMENT ORDER BY ID DESC ");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("NB"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NAME"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("DISPO"));
@@ -79,7 +89,7 @@ QSqlQueryModel * equipement::show_nb()
 QSqlQueryModel * equipement::show_one()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("SELECT * FROM EQUIPEMENT ORDER BY ID DESC ");
+    model->setQuery("SELECT NB, NAME, DISPO FROM EQUIPEMENT ORDER BY ID DESC ");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("NB"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NAME"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("DISPO"));

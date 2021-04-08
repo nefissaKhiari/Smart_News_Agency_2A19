@@ -26,6 +26,7 @@ public:
      QSqlQueryModel * show_dispo();
      QSqlQueryModel * show_nb();
      QSqlQueryModel * show_one();
+     QSqlQueryModel * showSearch(QString txt);
 
 private:
     QString dispo, name ;

@@ -102,7 +102,7 @@ void MainWindow::on_ajouter_2_clicked()
    QString dispo_2=ui->dispo_2->currentText();
    QString name=ui->name->currentText();
 
- bool test=equipement(nb,dispo_2,name).add();
+ bool test=equipement(nb,name,dispo_2).add();
  QMessageBox msgBox;
 
  if(test)
@@ -157,4 +157,23 @@ void MainWindow::on_supp_3_clicked()
         msgBox.setText("Echec de suppression");
         msgBox.exec();
 }
+}
+
+void MainWindow::on_read_equipement_textChanged(const QString &arg1)
+{
+
+
+    //QModelIndexList indexes = ui->Afficher_4->model()->match(ui->Afficher_4->model()->index(0,0),Qt::EditRole,arg1,-1, Qt::MatchFlags(Qt::MatchContains|Qt::MatchWrap));
+
+    /*if(indexes.length() > from){
+        QModelIndex ix = indexes.at(from);
+        ui->Afficher_4->setCurrentIndex(ix);
+        ui->Afficher_4->scrollTo(ix);
+    }*/
+
+}
+
+void MainWindow::on_read_equipement_returnPressed()
+{
+    ui->Afficher_4->setModel(eq1.showSearch(ui->read_equipement->text()));
 }
